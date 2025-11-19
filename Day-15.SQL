@@ -6,7 +6,7 @@
 SELECT
 DISTINCT p.name AS patient_name,p.service,
 s.staff_name,s.role,
-WEEK(p.arrival_date,1) AS week,
+EXTRACT(WEEK FROM p.arrival_date) AS week,
 CASE WHEN ss.present=1 THEN 'Yes' ELSE 'No' END AS availability
 FROM  patients p
 JOIN staff s

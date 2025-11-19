@@ -12,7 +12,7 @@ FROM  patients p
 JOIN staff s
 ON p.service=s.service
 JOIN staff_schedule ss
-ON s.staff_id=ss.staff_id AND s.week=ss.week
+ON s.staff_id=ss.staff_id AND week=ss.week
 ORDER BY week,patient_name;
 
 --2. Combine services_weekly with staff and staff_schedule for comprehensive service analysis.
